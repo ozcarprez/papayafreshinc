@@ -7,14 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --teal:#00b4a2;
-  --rosa:#e91e8c;
-  --naranja:#f97316;
-  --amarillo:#fbbf24;
-  --cafe:#3d1a00;
-  --crema:#fdf8f3;
-}
+:root{--teal:#00b4a2;--rosa:#e91e8c;--naranja:#f97316;--amarillo:#fbbf24;--cafe:#3d1a00;--crema:#fdf8f3}
 html{scroll-behavior:smooth}
 body{font-family:'Nunito',sans-serif;background:#fff;color:var(--cafe);overflow-x:hidden}
 nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97);border-bottom:2px solid #f0ebe4;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:66px}
@@ -22,6 +15,11 @@ nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97)
 .nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--cafe);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--teal)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.lang-toggle{display:flex;align-items:center;gap:6px}
+.lang-btn{background:none;border:none;font-family:'Nunito',sans-serif;font-size:.65rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:4px 6px;border-radius:4px;transition:all .2s;color:rgba(61,26,0,.3)}
+.lang-btn.active{color:var(--teal);border-bottom:2px solid var(--teal)}
+.lang-sep{font-size:.6rem;color:#ccc}
 .nav-cta{background:var(--rosa);color:#fff;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 26px;border-radius:50px;box-shadow:0 4px 16px rgba(233,30,140,.28);transition:transform .2s,box-shadow .2s}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(233,30,140,.38)}
 #hero{margin-top:66px;background:#fff;min-height:calc(100vh - 66px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:40px 80px 60px;position:relative;overflow:hidden}
@@ -163,13 +161,20 @@ footer{background:var(--cafe);padding:40px 60px;display:flex;align-items:center;
 <nav>
   <a class="nav-logo" href="#">Papaya Fresh Inc.</a>
   <ul class="nav-links">
-    <li><a href="#variedades">Variedad</a></li>
-    <li><a href="#campo">Rancho</a></li>
-    <li><a href="#madurez">Madurez</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#variedades" data-es="Variedad" data-en="Variety">Variedad</a></li>
+    <li><a href="#campo" data-es="Rancho" data-en="Ranch">Rancho</a></li>
+    <li><a href="#madurez" data-es="Madurez" data-en="Ripeness">Madurez</a></li>
+    <li><a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a></li>
+    <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
   </ul>
-  <a class="nav-cta" href="#contact">Cotizar</a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ESP</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">ENG</button>
+    </div>
+    <a class="nav-cta" href="#contact" data-es="Cotizar" data-en="Get a Quote">Cotizar</a>
+  </div>
 </nav>
 
 <section id="hero">
@@ -188,19 +193,19 @@ footer{background:var(--cafe);padding:40px 60px;display:flex;align-items:center;
   </svg>
 
   <div class="hero-text r">
-    <span class="hero-tag">Tecomán, Colima · México</span>
+    <span class="hero-tag" data-es="Tecomán, Colima · México" data-en="Tecomán, Colima · Mexico">Tecomán, Colima · México</span>
     <h1>PAPAYA<span class="block teal">MARADOL</span></h1>
-    <p class="hero-sub">Del rancho directo a tu negocio.</p>
-    <p class="hero-desc">Productores directos en Colima. Sin intermediarios, producción todo el año, exportación a Estados Unidos.</p>
+    <p class="hero-sub" data-es="Del rancho directo a tu negocio." data-en="From the ranch directly to your business.">Del rancho directo a tu negocio.</p>
+    <p class="hero-desc" data-es="Productores directos en Colima. Sin intermediarios, producción todo el año, exportación a Estados Unidos." data-en="Direct producers in Colima. No middlemen, year-round production, export to the United States.">Productores directos en Colima. Sin intermediarios, producción todo el año, exportación a Estados Unidos.</p>
     <div class="hero-pills">
-      <span class="pill">Todo el año</span>
-      <span class="pill hot">30 años de experiencia</span>
-      <span class="pill">Mayoreo</span>
-      <span class="pill">Exportación EUA</span>
+      <span class="pill" data-es="Todo el año" data-en="Year-round">Todo el año</span>
+      <span class="pill hot" data-es="30 años de experiencia" data-en="30 years of experience">30 años de experiencia</span>
+      <span class="pill" data-es="Mayoreo" data-en="Wholesale">Mayoreo</span>
+      <span class="pill" data-es="Exportación EUA" data-en="USA Export">Exportación EUA</span>
     </div>
     <div class="hero-btns">
-      <a class="btn-main" href="#contact">Quiero distribuir</a>
-      <a class="btn-sec" href="#variedades">Ver tipos</a>
+      <a class="btn-main" href="#contact" data-es="Quiero distribuir" data-en="I want to distribute">Quiero distribuir</a>
+      <a class="btn-sec" href="#variedades" data-es="Ver tipos" data-en="See varieties">Ver tipos</a>
     </div>
   </div>
 
@@ -210,10 +215,10 @@ footer{background:var(--cafe);padding:40px 60px;display:flex;align-items:center;
       <div class="badge">
         <div class="badge-inner">
           <strong>30</strong>
-          <span>años<br>de exp.</span>
+          <span data-es="años de exp." data-en="years exp.">años<br>de exp.</span>
         </div>
       </div>
-      <div class="doodle">¡Fresca!</div>
+      <div class="doodle" data-es="¡Fresca!" data-en="Fresh!">¡Fresca!</div>
     </div>
   </div>
 </section>
@@ -223,43 +228,43 @@ footer{background:var(--cafe);padding:40px 60px;display:flex;align-items:center;
 </svg>
 
 <section id="variedades">
-  <span class="sec-eyebrow r">nuestra fruta</span>
-  <h2 class="sec-title r d1">VARIEDADES</h2>
+  <span class="sec-eyebrow r" data-es="nuestra fruta" data-en="our fruit">nuestra fruta</span>
+  <h2 class="sec-title r d1" data-es="VARIEDADES" data-en="VARIETIES">VARIEDADES</h2>
   <span class="zig r d2"></span>
   <div class="var-grid r">
     <div class="var-card">
       <img src="images/papaya-maradol.png" alt="Papaya Maradol Roja">
-      <span class="var-tag">Tamaño grande</span>
-      <h3 class="var-name">Maradol Roja</h3>
+      <span class="var-tag" data-es="Tamaño grande" data-en="Large size">Tamaño grande</span>
+      <h3 class="var-name" data-es="Maradol Roja" data-en="Maradol Red">Maradol Roja</h3>
       <div class="var-line"></div>
-      <p class="var-desc">Pulpa roja intensa, sabor dulce y textura firme. Ideal para distribución a larga distancia.</p>
+      <p class="var-desc" data-es="Pulpa roja intensa, sabor dulce y textura firme. Ideal para distribución a larga distancia." data-en="Intense red flesh, sweet flavor and firm texture. Ideal for long-distance distribution.">Pulpa roja intensa, sabor dulce y textura firme. Ideal para distribución a larga distancia.</p>
       <div class="var-stats">
-        <div class="vstat"><strong>3–5kg</strong><span>peso</span></div>
+        <div class="vstat"><strong>3–5kg</strong><span data-es="peso" data-en="weight">peso</span></div>
         <div class="vstat"><strong>12°</strong><span>Brix</span></div>
-        <div class="vstat"><strong>30+</strong><span>días</span></div>
+        <div class="vstat"><strong>30+</strong><span data-es="días" data-en="days">días</span></div>
       </div>
     </div>
     <div class="var-card">
       <img src="images/papaya-hero.png" alt="Papaya Calibre EUA">
-      <span class="var-tag">Exportación</span>
-      <h3 class="var-name">Calibre EUA</h3>
+      <span class="var-tag" data-es="Exportación" data-en="Export">Exportación</span>
+      <h3 class="var-name" data-es="Calibre EUA" data-en="USA Grade">Calibre EUA</h3>
       <div class="var-line"></div>
-      <p class="var-desc">Selección especial para Estados Unidos. Tamaño uniforme, cumple estándares USDA.</p>
+      <p class="var-desc" data-es="Selección especial para Estados Unidos. Tamaño uniforme, cumple estándares USDA." data-en="Special selection for the United States. Uniform size, meets USDA standards.">Selección especial para Estados Unidos. Tamaño uniforme, cumple estándares USDA.</p>
       <div class="var-stats">
-        <div class="vstat"><strong>2–3kg</strong><span>peso</span></div>
+        <div class="vstat"><strong>2–3kg</strong><span data-es="peso" data-en="weight">peso</span></div>
         <div class="vstat"><strong>14°</strong><span>Brix</span></div>
-        <div class="vstat"><strong>USDA</strong><span>estándar</span></div>
+        <div class="vstat"><strong>USDA</strong><span data-es="estándar" data-en="standard">estándar</span></div>
       </div>
     </div>
     <div class="var-card">
       <img src="images/papaya-caja.png" alt="Caja Papaya Fresh">
-      <span class="var-tag">Mayoreo</span>
-      <h3 class="var-name">Caja Estándar</h3>
+      <span class="var-tag" data-es="Mayoreo" data-en="Wholesale">Mayoreo</span>
+      <h3 class="var-name" data-es="Caja Estándar" data-en="Standard Box">Caja Estándar</h3>
       <div class="var-line"></div>
-      <p class="var-desc">10–12 piezas por caja, 30 kg. Empaque Papaya Fresh, lista para anaquel o redistribución.</p>
+      <p class="var-desc" data-es="10–12 piezas por caja, 30 kg. Empaque Papaya Fresh, lista para anaquel o redistribución." data-en="10–12 pieces per box, 30 kg. Papaya Fresh packaging, ready for shelf or redistribution.">10–12 piezas por caja, 30 kg. Empaque Papaya Fresh, lista para anaquel o redistribución.</p>
       <div class="var-stats">
-        <div class="vstat"><strong>10–12</strong><span>piezas</span></div>
-        <div class="vstat"><strong>30kg</strong><span>por caja</span></div>
+        <div class="vstat"><strong>10–12</strong><span data-es="piezas" data-en="pieces">piezas</span></div>
+        <div class="vstat"><strong>30kg</strong><span data-es="por caja" data-en="per box">por caja</span></div>
         <div class="vstat"><strong>Full</strong><span>truck</span></div>
       </div>
     </div>
@@ -275,16 +280,16 @@ footer{background:var(--cafe);padding:40px 60px;display:flex;align-items:center;
     <img src="images/story1.jpeg" alt="Rancho San Miguel Tecomán Colima">
   </div>
   <div class="campo-text">
-    <span class="sec-eyebrow">nuestro rancho</span>
+    <span class="sec-eyebrow" data-es="nuestro rancho" data-en="our ranch">nuestro rancho</span>
     <h2 class="r">RANCHO<br><em>SAN MIGUEL</em></h2>
-    <p class="r d1">Tecomán, Colima — la zona papayera más importante de México. Clima tropical, tierra volcánica, producción los 365 días del año.</p>
+    <p class="r d1" data-es="Tecomán, Colima — la zona papayera más importante de México. Clima tropical, tierra volcánica, producción los 365 días del año." data-en="Tecomán, Colima — the most important papaya-growing region in Mexico. Tropical climate, volcanic soil, production 365 days a year.">Tecomán, Colima — la zona papayera más importante de México. Clima tropical, tierra volcánica, producción los 365 días del año.</p>
     <div class="campo-stats r d2">
-      <div class="cstat"><strong>53 has</strong><span>de cultivo</span></div>
-      <div class="cstat"><strong>365</strong><span>días al año</span></div>
-      <div class="cstat"><strong>30+</strong><span>años de exp.</span></div>
-      <div class="cstat"><strong>EUA</strong><span>exportación</span></div>
+      <div class="cstat"><strong>53 has</strong><span data-es="de cultivo" data-en="of farmland">de cultivo</span></div>
+      <div class="cstat"><strong>365</strong><span data-es="días al año" data-en="days a year">días al año</span></div>
+      <div class="cstat"><strong>30+</strong><span data-es="años de exp." data-en="years exp.">años de exp.</span></div>
+      <div class="cstat"><strong>EUA</strong><span data-es="exportación" data-en="export">exportación</span></div>
     </div>
-    <a class="btn-main r d3" href="#contact">Hablar con el productor</a>
+    <a class="btn-main r d3" href="#contact" data-es="Hablar con el productor" data-en="Talk to the grower">Hablar con el productor</a>
   </div>
 </section>
 
@@ -293,38 +298,38 @@ footer{background:var(--cafe);padding:40px 60px;display:flex;align-items:center;
 </svg>
 
 <section id="madurez">
-  <span class="sec-eyebrow r">guía de maduración</span>
-  <h2 class="sec-title r d1">PUNTO DE MADUREZ</h2>
+  <span class="sec-eyebrow r" data-es="guía de maduración" data-en="ripening guide">guía de maduración</span>
+  <h2 class="sec-title r d1" data-es="PUNTO DE MADUREZ" data-en="RIPENESS STAGE">PUNTO DE MADUREZ</h2>
   <span class="zig r d2"></span>
   <div class="mad-row r">
     <div class="mad-step">
       <div class="mad-circle" style="background:linear-gradient(135deg,#2e7d32,#1a5e20)">
-        <span class="mad-pct">100%</span><span class="mad-lbl">Verde</span>
-      </div><p>Verde<br>completo</p>
+        <span class="mad-pct">100%</span><span class="mad-lbl" data-es="Verde" data-en="Green">Verde</span>
+      </div><p data-es="Verde completo" data-en="All green">Verde<br>completo</p>
     </div>
     <div class="mad-step">
       <div class="mad-circle" style="background:linear-gradient(135deg,#66bb6a,#fbbf24)">
-        <span class="mad-pct">25%</span><span class="mad-lbl">Amarilla</span>
-      </div><p>Inicio<br>de color</p>
+        <span class="mad-pct">25%</span><span class="mad-lbl" data-es="Amarilla" data-en="Yellow">Amarilla</span>
+      </div><p data-es="Inicio de color" data-en="Color start">Inicio<br>de color</p>
     </div>
     <div class="mad-step">
       <div class="mad-circle" style="background:linear-gradient(135deg,#fbbf24,#f97316)">
-        <span class="mad-pct">50%</span><span class="mad-lbl">Amarilla</span>
-      </div><p>Medio<br>punto</p>
+        <span class="mad-pct">50%</span><span class="mad-lbl" data-es="Amarilla" data-en="Yellow">Amarilla</span>
+      </div><p data-es="Medio punto" data-en="Half ripe">Medio<br>punto</p>
     </div>
     <div class="mad-step">
       <div class="mad-circle" style="background:linear-gradient(135deg,#f97316,#ea580c)">
-        <span class="mad-pct">75%</span><span class="mad-lbl">Amarilla</span>
-      </div><p>Casi<br>lista</p>
+        <span class="mad-pct">75%</span><span class="mad-lbl" data-es="Amarilla" data-en="Yellow">Amarilla</span>
+      </div><p data-es="Casi lista" data-en="Almost ready">Casi<br>lista</p>
     </div>
     <div class="mad-step">
       <div class="mad-circle" style="background:linear-gradient(135deg,#ea580c,#c2410c)">
-        <span class="mad-pct">100%</span><span class="mad-lbl">Lista</span>
-      </div><p>Lista para<br>comer</p>
+        <span class="mad-pct">100%</span><span class="mad-lbl" data-es="Lista" data-en="Ready">Lista</span>
+      </div><p data-es="Lista para comer" data-en="Ready to eat">Lista para<br>comer</p>
     </div>
   </div>
   <div class="mad-tip r d1">
-    <p>Para madurar en casa: coloca la papaya en una <strong>bolsa de papel</strong> y ciérrala. Déjala en lugar tibio y seco. El tiempo varía según el punto de cosecha.</p>
+    <p data-es="Para madurar en casa: coloca la papaya en una <strong>bolsa de papel</strong> y ciérrala. Déjala en lugar tibio y seco. El tiempo varía según el punto de cosecha." data-en="To ripen at home: place the papaya in a <strong>paper bag</strong> and close it. Leave it in a warm, dry place. Time varies depending on harvest stage.">Para madurar en casa: coloca la papaya en una <strong>bolsa de papel</strong> y ciérrala. Déjala en lugar tibio y seco. El tiempo varía según el punto de cosecha.</p>
   </div>
 </section>
 
@@ -334,8 +339,8 @@ footer{background:var(--cafe);padding:40px 60px;display:flex;align-items:center;
 
 <section id="galeria" style="background:#fff;padding:80px 0 0;text-align:center">
   <div class="inner">
-    <span class="sec-eyebrow r">desde el rancho</span>
-    <h2 class="sec-title r d1">NUESTROS CAMPOS</h2>
+    <span class="sec-eyebrow r" data-es="desde el rancho" data-en="from the ranch">desde el rancho</span>
+    <h2 class="sec-title r d1" data-es="NUESTROS CAMPOS" data-en="OUR FIELDS">NUESTROS CAMPOS</h2>
     <span class="zig r d2"></span>
   </div>
   <div class="photo-strip r">
@@ -351,44 +356,44 @@ footer{background:var(--cafe);padding:40px 60px;display:flex;align-items:center;
 
 <section id="contact">
   <div class="c-left">
-    <span class="sec-eyebrow">hablemos</span>
-    <h2>QUIERO<br><em>DISTRIBUIR</em></h2>
-    <p>Somos productores directos. Sin intermediarios — la papaya más fresca de Colima llega directo a tu negocio.</p>
+    <span class="sec-eyebrow" data-es="hablemos" data-en="let's talk">hablemos</span>
+    <h2><span data-es="QUIERO" data-en="I WANT TO">QUIERO</span><br><em data-es="DISTRIBUIR" data-en="DISTRIBUTE">DISTRIBUIR</em></h2>
+    <p data-es="Somos productores directos. Sin intermediarios — la papaya más fresca de Colima llega directo a tu negocio." data-en="We are direct producers. No middlemen — the freshest papaya from Colima goes straight to your business.">Somos productores directos. Sin intermediarios — la papaya más fresca de Colima llega directo a tu negocio.</p>
     <div>
-      <div class="c-det"><div class="c-dot">📍</div><div><strong>Rancho San Miguel</strong><span>Tecomán, Colima, México</span></div></div>
-      <div class="c-det"><div class="c-dot">🇺🇸</div><div><strong>Exportación EUA</strong><span>Cumple estándares USDA</span></div></div>
-      <div class="c-det"><div class="c-dot">📦</div><div><strong>Mayoreo directo</strong><span>Full truck disponible, 30 kg/caja</span></div></div>
-      <div class="c-det"><div class="c-dot">📅</div><div><strong>Temporada</strong><span>Producción los 365 días del año</span></div></div>
+      <div class="c-det"><div class="c-dot">📍</div><div><strong data-es="Rancho San Miguel" data-en="Rancho San Miguel">Rancho San Miguel</strong><span data-es="Tecomán, Colima, México" data-en="Tecomán, Colima, Mexico">Tecomán, Colima, México</span></div></div>
+      <div class="c-det"><div class="c-dot">🇺🇸</div><div><strong data-es="Exportación EUA" data-en="USA Export">Exportación EUA</strong><span data-es="Cumple estándares USDA" data-en="Meets USDA standards">Cumple estándares USDA</span></div></div>
+      <div class="c-det"><div class="c-dot">📦</div><div><strong data-es="Mayoreo directo" data-en="Direct wholesale">Mayoreo directo</strong><span data-es="Full truck disponible, 30 kg/caja" data-en="Full truck available, 30 kg/box">Full truck disponible, 30 kg/caja</span></div></div>
+      <div class="c-det"><div class="c-dot">📅</div><div><strong data-es="Temporada" data-en="Season">Temporada</strong><span data-es="Producción los 365 días del año" data-en="Production 365 days a year">Producción los 365 días del año</span></div></div>
     </div>
   </div>
   <div class="c-form r">
     <div class="frow">
-      <div class="fg"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
-      <div class="fg"><label>Empresa</label><input type="text" placeholder="Tu empresa"></div>
+      <div class="fg"><label data-es="Nombre" data-en="Name">Nombre</label><input type="text" data-ph-es="Tu nombre" data-ph-en="Your name" placeholder="Tu nombre"></div>
+      <div class="fg"><label data-es="Empresa" data-en="Company">Empresa</label><input type="text" data-ph-es="Tu empresa" data-ph-en="Your company" placeholder="Tu empresa"></div>
     </div>
-    <div class="fg"><label>Correo</label><input type="email" placeholder="correo@empresa.com"></div>
-    <div class="fg"><label>¿Qué necesitas?</label>
+    <div class="fg"><label data-es="Correo" data-en="Email">Correo</label><input type="email" placeholder="correo@empresa.com"></div>
+    <div class="fg"><label data-es="¿Qué necesitas?" data-en="What do you need?">¿Qué necesitas?</label>
       <select>
-        <option value="">Selecciona...</option>
-        <option>Ser distribuidor</option>
-        <option>Cotización por volumen</option>
-        <option>Exportación a EUA</option>
-        <option>Información general</option>
+        <option data-es="Selecciona..." data-en="Select...">Selecciona...</option>
+        <option data-es="Ser distribuidor" data-en="Become a distributor">Ser distribuidor</option>
+        <option data-es="Cotización por volumen" data-en="Volume quote">Cotización por volumen</option>
+        <option data-es="Exportación a EUA" data-en="USA export">Exportación a EUA</option>
+        <option data-es="Información general" data-en="General information">Información general</option>
       </select>
     </div>
-    <div class="fg"><label>Mensaje</label><textarea placeholder="Cuéntanos sobre tu negocio..."></textarea></div>
-    <button class="btn-send">Enviar mensaje 🍉</button>
+    <div class="fg"><label data-es="Mensaje" data-en="Message">Mensaje</label><textarea data-ph-es="Cuéntanos sobre tu negocio..." data-ph-en="Tell us about your business..." placeholder="Cuéntanos sobre tu negocio..."></textarea></div>
+    <button class="btn-send" data-es="Enviar mensaje 🍉" data-en="Send message 🍉">Enviar mensaje 🍉</button>
   </div>
 </section>
 
 <footer>
   <a class="f-logo" href="#">Papaya Fresh Inc.</a>
   <ul class="f-links">
-    <li><a href="#variedades">Variedad</a></li>
-    <li><a href="#campo">Rancho</a></li>
-    <li><a href="#madurez">Madurez</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="#variedades" data-es="Variedad" data-en="Variety">Variedad</a></li>
+    <li><a href="#campo" data-es="Rancho" data-en="Ranch">Rancho</a></li>
+    <li><a href="#madurez" data-es="Madurez" data-en="Ripeness">Madurez</a></li>
+    <li><a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a></li>
+    <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
   </ul>
   <p class="f-copy">© 2025 Papaya Fresh Inc. — Tecomán, Colima</p>
 </footer>
@@ -398,6 +403,31 @@ const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
   if(e.isIntersecting)e.target.classList.add('in');
 }),{threshold:.07});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+function setLang(lang) {
+  // Update button states
+  document.getElementById('btn-es').classList.toggle('active', lang==='es');
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+
+  // Update all elements with data-es / data-en
+  document.querySelectorAll('[data-es]').forEach(el => {
+    const txt = el.getAttribute('data-'+lang);
+    if (!txt) return;
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+    if (el.innerHTML !== undefined) el.innerHTML = txt;
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-ph-es]').forEach(el => {
+    el.placeholder = el.getAttribute('data-ph-'+lang) || el.placeholder;
+  });
+
+  // Update select options
+  document.querySelectorAll('select option').forEach(opt => {
+    const txt = opt.getAttribute('data-'+lang);
+    if (txt) opt.textContent = txt;
+  });
+}
 </script>
 </body>
 </html>
