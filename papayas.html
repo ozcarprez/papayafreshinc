@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papaya Maradol — Papaya Fresh Inc.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --verde:#1a7a38;
+  --verde-oscuro:#0f4d22;
+  --naranja:#f26522;
+  --amarillo:#fbbf24;
+  --rosa:#e91e8c;
+  --cafe:#2b1000;
+  --teal:#00b4a0;
+  --blanco:#fff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--cafe);overflow-x:hidden;background:#fff}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;z-index:200;
+  background:var(--verde-oscuro);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:58px;
+}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:#fff;text-decoration:none;letter-spacing:.08em}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--naranja);color:#fff;font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;padding:8px 22px;border-radius:3px}
+
+/* HERO */
+#hero{
+  margin-top:58px;
+  background:var(--teal);
+  min-height:calc(100vh - 58px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:60px 80px;
+  position:relative;
+  overflow:hidden;
+}
+#hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 120% 60% at 70% 110%, rgba(0,0,0,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 80% at 20% -10%, rgba(255,255,255,.08) 0%, transparent 50%);
+}
+#hero::after{
+  content:'PAPAYA';
+  position:absolute;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28vw;
+  color:rgba(255,255,255,.05);
+  letter-spacing:-.02em;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;
+  pointer-events:none;
+  z-index:0;
+}
+.hero-text{position:relative;z-index:1;max-width:520px}
+.hero-eyebrow{font-size:.65rem;font-weight:900;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:12px;display:block}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(6rem,12vw,11rem);
+  color:#fff;line-height:.88;margin-bottom:20px;
+  text-shadow:5px 5px 0 rgba(0,0,0,.15);
+}
+.hero-title .line2{color:var(--amarillo);display:block;-webkit-text-stroke:2px rgba(0,0,0,.1)}
+.hero-sub{
+  font-family:'Permanent Marker',cursive;
+  font-size:clamp(1rem,2vw,1.5rem);
+  color:rgba(255,255,255,.85);
+  margin-bottom:32px;line-height:1.5;
+}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.chip{background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.35);color:#fff;font-size:.65rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:3px}
+.chip.hl{background:var(--amarillo);border-color:var(--amarillo);color:var(--cafe)}
+.hero-btn{display:inline-block;background:#fff;color:var(--verde-oscuro);font-size:.82rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:15px 40px;border-radius:3px;box-shadow:0 8px 28px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s}
+.hero-btn:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.3)}
+
+.hero-img-wrap{position:relative;z-index:1;flex-shrink:0}
+.hero-img-wrap img{width:420px;max-height:calc(100vh - 120px);object-fit:contain;filter:drop-shadow(-15px 30px 50px rgba(0,0,0,.3));animation:float 5s ease-in-out infinite;display:block}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+.hero-badge{position:absolute;top:-10px;right:-20px;background:var(--naranja);color:#fff;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.2);transform:rotate(12deg)}
+.hero-badge strong{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;color:#fff}
+.hero-badge span{font-size:.48rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;line-height:1.3}
+
+.wave-divider{display:block;width:100%;line-height:0;margin-top:-2px}
+
+/* VARIEDADES */
+#variedades{background:#fff;padding:80px 60px;text-align:center}
+.sec-label{font-size:.62rem;font-weight:900;letter-spacing:.3em;text-transform:uppercase;color:var(--naranja);margin-bottom:8px;display:block}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,6vw,5.5rem);color:var(--cafe);line-height:1;margin-bottom:6px}
+.sec-title span{color:var(--verde)}
+.zigzag{display:block;margin:0 auto 52px;width:100px;height:10px;background:repeating-linear-gradient(90deg,var(--rosa) 0,var(--rosa) 9px,transparent 9px,transparent 18px)}
+
+.var-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1100px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.1)}
+.var-card{padding:48px 36px 40px;text-align:center;position:relative;transition:transform .3s}
+.var-card:hover{transform:scale(1.02);z-index:1}
+.var-card:nth-child(1){background:var(--verde)}
+.var-card:nth-child(2){background:var(--naranja)}
+.var-card:nth-child(3){background:var(--amarillo)}
+.var-card img{width:180px;height:180px;object-fit:contain;margin-bottom:20px;filter:drop-shadow(0 12px 20px rgba(0,0,0,.2));transition:transform .4s}
+.var-card:hover img{transform:translateY(-8px) scale(1.05)}
+.var-tag{display:inline-block;background:rgba(255,255,255,.25);color:#fff;font-size:.58rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;padding:3px 12px;border-radius:3px;margin-bottom:10px}
+.var-card:nth-child(3) .var-tag{color:var(--cafe)}
+.var-name{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:#fff;margin-bottom:10px;line-height:1}
+.var-card:nth-child(3) .var-name{color:var(--cafe)}
+.var-desc{font-size:.82rem;font-weight:700;line-height:1.65;color:rgba(255,255,255,.85);margin-bottom:20px}
+.var-card:nth-child(3) .var-desc{color:rgba(43,16,0,.7)}
+.var-stats{display:flex;justify-content:center;gap:20px;border-top:1px solid rgba(255,255,255,.2);padding-top:16px}
+.var-card:nth-child(3) .var-stats{border-top-color:rgba(43,16,0,.15)}
+.stat strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:#fff;line-height:1}
+.var-card:nth-child(3) .stat strong{color:var(--cafe)}
+.stat span{font-size:.58rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.var-card:nth-child(3) .stat span{color:rgba(43,16,0,.5)}
+
+/* CAMPO */
+#campo{position:relative;height:480px;overflow:hidden}
+#campo img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+#campo .overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,60,20,.88) 0%,rgba(10,60,20,.5) 55%,transparent 100%);display:flex;align-items:center;padding:0 80px}
+.campo-text h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem);color:#fff;line-height:.95;margin-bottom:16px;text-shadow:2px 2px 0 rgba(0,0,0,.2)}
+.campo-text h2 em{color:var(--amarillo);font-style:normal}
+.campo-text p{font-size:.95rem;font-weight:700;color:rgba(255,255,255,.8);max-width:420px;line-height:1.7;margin-bottom:28px}
+.campo-text a{display:inline-block;background:#fff;color:var(--verde-oscuro);font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:12px 30px;border-radius:3px;transition:transform .2s}
+.campo-text a:hover{transform:scale(1.04)}
+
+/* MADUREZ */
+#madurez{background:var(--verde);padding:80px 60px;text-align:center}
+#madurez .sec-label{color:var(--amarillo)}
+#madurez .sec-title{color:#fff}
+#madurez .sec-title span{color:var(--amarillo)}
+.maduracion{display:flex;justify-content:center;align-items:flex-end;gap:16px;max-width:700px;margin:0 auto 48px;flex-wrap:wrap}
+.mad-step{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;min-width:90px}
+.mad-circle{width:78px;height:78px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px solid rgba(255,255,255,.25);cursor:default;transition:transform .3s}
+.mad-circle:hover{transform:scale(1.18)}
+.mad-pct{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#fff;line-height:1}
+.mad-lbl{font-size:.42rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.mad-step p{font-size:.65rem;font-weight:800;color:rgba(255,255,255,.6);text-align:center;letter-spacing:.06em;text-transform:uppercase}
+.mad-tip{background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:12px;max-width:580px;margin:0 auto;padding:28px 36px;text-align:left}
+.mad-tip p{font-size:.88rem;font-weight:700;line-height:1.8;color:rgba(255,255,255,.88)}
+.mad-tip strong{color:var(--amarillo)}
+
+/* GALERÍA */
+#galeria{background:#fff;padding:80px 0 0;text-align:center}
+#galeria .inner{padding:0 60px 48px}
+.photo-row{display:grid;grid-template-columns:repeat(3,1fr)}
+.photo-row img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:saturate(.9);transition:filter .4s,transform .3s}
+.photo-row img:hover{filter:saturate(1.3);transform:scale(1.04);z-index:1;position:relative}
+
+/* CONTACTO */
+#contact{background:var(--cafe);padding:80px 60px;text-align:center}
+#contact .sec-label{color:var(--amarillo)}
+#contact .sec-title{color:#fff}
+#contact .sec-title span{color:var(--naranja)}
+.contact-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;max-width:960px;margin:48px auto 0;text-align:left}
+.c-info p{font-size:.9rem;font-weight:700;line-height:1.8;color:rgba(255,255,255,.6);margin-bottom:24px}
+.c-det{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.c-det-dot{width:6px;height:6px;border-radius:50%;background:var(--naranja);margin-top:6px;flex-shrink:0}
+.c-det strong{display:block;font-size:.78rem;font-weight:900;color:#fff;letter-spacing:.04em}
+.c-det span{font-size:.74rem;font-weight:700;color:rgba(255,255,255,.45)}
+.c-form{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:32px}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:.58rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px}
+.fg input,.fg textarea,.fg select{width:100%;padding:11px 14px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-family:'Nunito',sans-serif;font-size:.86rem;font-weight:700;outline:none;transition:border-color .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.25)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--naranja)}
+.fg select option{background:#2b1000;color:#fff}
+.fg textarea{height:96px;resize:none}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.btn-submit{width:100%;padding:13px;background:var(--naranja);color:#fff;border:none;border-radius:6px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s}
+.btn-submit:hover{background:#d4541a;transform:scale(1.01)}
+
+/* FOOTER */
+footer{background:#1a0900;padding:36px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.f-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:#fff;text-decoration:none;letter-spacing:.06em}
+.f-links{display:flex;gap:20px;list-style:none}
+.f-links a{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.f-links a:hover{color:#fff}
+.f-copy{font-size:.62rem;font-weight:700;color:rgba(255,255,255,.15)}
+
+/* reveal */
+.r{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.r.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media(max-width:900px){
+  nav{padding:0 20px}.nav-links{display:none}
+  #hero{padding:40px 28px;flex-direction:column;text-align:center}
+  .hero-img-wrap{display:none}
+  .hero-chips{justify-content:center}
+  .var-row{grid-template-columns:1fr}
+  #campo .overlay{padding:0 32px}
+  .contact-inner{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center;padding:28px}
+  #variedades,#madurez,#contact,#galeria .inner{padding-left:24px;padding-right:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Papaya Fresh Inc.</a>
+  <ul class="nav-links">
+    <li><a href="#variedades">Variedad</a></li>
+    <li><a href="#madurez">Madurez</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Cotizar</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-text">
+    <span class="hero-eyebrow">Tecomán, Colima · México</span>
+    <h1 class="hero-title">PAPAYA<span class="line2">MARADOL</span></h1>
+    <p class="hero-sub">Del rancho directo<br>a tu negocio.</p>
+    <div class="hero-chips">
+      <span class="chip">Tierra fértil</span>
+      <span class="chip">Clima perfecto</span>
+      <span class="chip hl">30 años de experiencia</span>
+      <span class="chip">Mayoreo</span>
+    </div>
+    <a class="hero-btn" href="#contact">Quiero distribuir</a>
+  </div>
+  <div class="hero-img-wrap">
+    <img src="images/papaya-hero.png" alt="Papaya Maradol Papaya Fresh">
+    <div class="hero-badge">
+      <strong>30</strong>
+      <span>años de<br>experiencia</span>
+    </div>
+  </div>
+</section>
+
+<svg class="wave-divider" viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,64 C240,0 480,64 720,32 C960,0 1200,64 1440,32 L1440,64 Z" fill="#fff"/>
+</svg>
+
+<section id="variedades">
+  <span class="sec-label r">Nuestra fruta</span>
+  <h2 class="sec-title r d1">PAPAYA <span>MARADOL</span></h2>
+  <span class="zigzag r d2"></span>
+  <div class="var-row r">
+    <div class="var-card">
+      <img src="images/papaya-maradol.png" alt="Papaya Maradol Roja">
+      <p class="var-tag">Tamaño grande</p>
+      <h3 class="var-name">Maradol Roja</h3>
+      <p class="var-desc">Pulpa roja intensa, sabor dulce y textura firme. Ideal para distribución a larga distancia.</p>
+      <div class="var-stats">
+        <div class="stat"><strong>3–5 kg</strong><span>peso</span></div>
+        <div class="stat"><strong>12°</strong><span>Brix</span></div>
+        <div class="stat"><strong>30+</strong><span>días vida</span></div>
+      </div>
+    </div>
+    <div class="var-card">
+      <img src="images/papaya-hero.png" alt="Papaya calibre exportación">
+      <p class="var-tag">Exportación</p>
+      <h3 class="var-name">Calibre EUA</h3>
+      <p class="var-desc">Selección especial para Estados Unidos. Cumple estándares USDA — tamaño uniforme, madurez controlada.</p>
+      <div class="var-stats">
+        <div class="stat"><strong>2–3 kg</strong><span>peso</span></div>
+        <div class="stat"><strong>14°</strong><span>Brix</span></div>
+        <div class="stat"><strong>USDA</strong><span>estándar</span></div>
+      </div>
+    </div>
+    <div class="var-card">
+      <img src="images/papaya-caja.png" alt="Caja Papaya Fresh 30 años">
+      <p class="var-tag">Mayoreo</p>
+      <h3 class="var-name">Caja estándar</h3>
+      <p class="var-desc">10–12 piezas por caja, 30 kg. Empaque Papaya Fresh Inc., lista para anaquel o redistribución.</p>
+      <div class="var-stats">
+        <div class="stat"><strong>10–12</strong><span>piezas</span></div>
+        <div class="stat"><strong>30 kg</strong><span>por caja</span></div>
+        <div class="stat"><strong>Full</strong><span>truck</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="campo">
+  <img src="images/story1.jpeg" alt="Campos de papaya Tecomán Colima">
+  <div class="overlay">
+    <div class="campo-text r">
+      <h2>Desde el rancho<br>hasta tu <em>almacén.</em></h2>
+      <p>Nuestros campos en Tecomán, Colima producen papaya todo el año. Sin intermediarios — tú compras directo al productor.</p>
+      <a href="#contact">Conocer más</a>
+    </div>
+  </div>
+</div>
+
+<section id="madurez">
+  <span class="sec-label r">Guía de maduración</span>
+  <h2 class="sec-title r d1">PUNTO DE <span>MADUREZ</span></h2>
+  <span class="zigzag r d2" style="background:repeating-linear-gradient(90deg,var(--amarillo) 0,var(--amarillo) 9px,transparent 9px,transparent 18px)"></span>
+  <div class="maduracion r">
+    <div class="mad-step">
+      <div class="mad-circle" style="background:linear-gradient(135deg,#1a7a38,#0f4d22)">
+        <span class="mad-pct">100%</span><span class="mad-lbl">Verde</span>
+      </div><p>Verde<br>completo</p>
+    </div>
+    <div class="mad-step">
+      <div class="mad-circle" style="background:linear-gradient(135deg,#4db85c,#fbbf24)">
+        <span class="mad-pct">25%</span><span class="mad-lbl">Amarilla</span>
+      </div><p>Inicio de<br>color</p>
+    </div>
+    <div class="mad-step">
+      <div class="mad-circle" style="background:linear-gradient(135deg,#fbbf24,#f97316)">
+        <span class="mad-pct">50%</span><span class="mad-lbl">Amarilla</span>
+      </div><p>Medio<br>punto</p>
+    </div>
+    <div class="mad-step">
+      <div class="mad-circle" style="background:linear-gradient(135deg,#f97316,#ea580c)">
+        <span class="mad-pct">75%</span><span class="mad-lbl">Amarilla</span>
+      </div><p>Casi<br>lista</p>
+    </div>
+    <div class="mad-step">
+      <div class="mad-circle" style="background:linear-gradient(135deg,#ea580c,#c2410c)">
+        <span class="mad-pct">100%</span><span class="mad-lbl">Lista</span>
+      </div><p>Lista para<br>comer</p>
+    </div>
+  </div>
+  <div class="mad-tip r d1">
+    <p>Para madurar en casa: coloca la papaya en una <strong>bolsa de papel</strong> y ciérrala bien. Déjala en un lugar tibio y seco. El tiempo varía según el punto de cosecha.</p>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="inner">
+    <span class="sec-label r">Desde el rancho</span>
+    <h2 class="sec-title r d1">NUESTROS <span>CAMPOS</span></h2>
+    <span class="zigzag r d2"></span>
+  </div>
+  <div class="photo-row">
+    <img src="images/hero.jpeg" alt="El rancho" class="r">
+    <img src="images/gallery2.jpeg" alt="Cosecha Colima" class="r d1">
+    <img src="images/gallery3.jpeg" alt="Campo de papaya" class="r d2">
+  </div>
+</section>
+
+<section id="contact">
+  <span class="sec-label r">Hablemos</span>
+  <h2 class="sec-title r d1">QUIERO <span>DISTRIBUIR</span></h2>
+  <span class="zigzag r d2" style="background:repeating-linear-gradient(90deg,var(--naranja) 0,var(--naranja) 9px,transparent 9px,transparent 18px)"></span>
+  <div class="contact-inner">
+    <div class="c-info r">
+      <p>Somos productores directos de papaya en Tecomán, Colima. Sin intermediarios — la mejor papaya llega directo a tu negocio.</p>
+      <div class="c-det"><div class="c-det-dot"></div><div><strong>Ubicación</strong><span>Tecomán, Colima, México</span></div></div>
+      <div class="c-det"><div class="c-det-dot"></div><div><strong>Exportación</strong><span>Estados Unidos y más</span></div></div>
+      <div class="c-det"><div class="c-det-dot"></div><div><strong>Volumen</strong><span>Mayoreo — full truck disponible</span></div></div>
+      <div class="c-det"><div class="c-det-dot"></div><div><strong>Temporada</strong><span>Producción todo el año</span></div></div>
+    </div>
+    <div class="c-form r d1">
+      <div class="frow">
+        <div class="fg"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+        <div class="fg"><label>Empresa</label><input type="text" placeholder="Tu empresa"></div>
+      </div>
+      <div class="fg"><label>Correo</label><input type="email" placeholder="correo@empresa.com"></div>
+      <div class="fg"><label>Consulta</label>
+        <select>
+          <option value="">Selecciona...</option>
+          <option>Quiero ser distribuidor</option>
+          <option>Cotización por volumen</option>
+          <option>Exportación a EUA</option>
+          <option>Información general</option>
+        </select>
+      </div>
+      <div class="fg"><label>Mensaje</label><textarea placeholder="Cuéntanos sobre tu negocio..."></textarea></div>
+      <button class="btn-submit">Enviar mensaje</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="f-logo" href="index.html">Papaya Fresh Inc.</a>
+  <ul class="f-links">
+    <li><a href="#variedades">Variedad</a></li>
+    <li><a href="#madurez">Madurez</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+  <p class="f-copy">© 2025 Papaya Fresh Inc. — Tecomán, Colima</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => {
+  if(x.isIntersecting) x.target.classList.add('in')
+}),{threshold:.08});
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
