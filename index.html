@@ -155,6 +155,7 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
   footer{flex-direction:column;text-align:center;padding:32px 28px}
   #variedades,#madurez,#galeria .inner{padding-left:28px;padding-right:28px}
 }
+.ripeness-grid{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:32px}.ripeness-card{display:flex;flex-direction:column;align-items:center;gap:12px;cursor:default}.ripeness-card img{width:100px;height:160px;object-fit:contain;transition:transform .3s ease,filter .3s ease;filter:drop-shadow(0 4px 12px rgba(0,0,0,.15))}.ripeness-card:hover img{transform:translateY(-12px) scale(1.08);filter:drop-shadow(0 12px 24px rgba(0,0,0,.25))}.ripeness-label{font-family:'Fredoka One',cursive;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cafe);opacity:.8}.ripeness-days{font-size:.75rem;font-weight:700;color:var(--teal)}
 </style>
 </head>
 <body>
@@ -295,33 +296,33 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
   <h2 class="sec-title r d1" data-es="PUNTO DE MADUREZ" data-en="RIPENESS STAGE">PUNTO DE MADUREZ</h2>
   <p class="r d2" style="max-width:620px;margin:0 auto 40px;font-size:1.1rem;font-weight:700;line-height:1.8;color:rgba(61,28,2,.6);text-align:center" data-es="Dependiendo de tu ciudad, seleccionamos el punto de cosecha ideal para que llegue perfecta a tu anaquel." data-en="Depending on your city, we select the ideal harvest point so it arrives perfect to your shelf.">Dependiendo de tu ciudad, seleccionamos el punto de cosecha ideal para que llegue perfecta a tu anaquel.</p>
   <span class="zig r d2"></span>
-  <div class="mad-row r">
-    <div class="mad-step">
-      <div class="mad-circle" style="background:linear-gradient(135deg,#1B4D35,#0f3020)">
-        <span class="mad-pct">100%</span><span class="mad-lbl" data-es="Verde" data-en="Green">Verde</span>
-      </div><p data-es="Verde completo" data-en="All green">Verde<br>completo</p>
-    </div>
-    <div class="mad-step">
-      <div class="mad-circle" style="background:linear-gradient(135deg,#028A6E,#fbbf24)">
-        <span class="mad-pct">25%</span><span class="mad-lbl" data-es="Amarilla" data-en="Yellow">Amarilla</span>
-      </div><p data-es="Inicio de color" data-en="Color start">Inicio<br>de color</p>
-    </div>
-    <div class="mad-step">
-      <div class="mad-circle" style="background:linear-gradient(135deg,#fbbf24,#E8820C)">
-        <span class="mad-pct">50%</span><span class="mad-lbl" data-es="Amarilla" data-en="Yellow">Amarilla</span>
-      </div><p data-es="Medio punto" data-en="Half ripe">Medio<br>punto</p>
-    </div>
-    <div class="mad-step">
-      <div class="mad-circle" style="background:linear-gradient(135deg,#E8820C,#c96a08)">
-        <span class="mad-pct">75%</span><span class="mad-lbl" data-es="Amarilla" data-en="Yellow">Amarilla</span>
-      </div><p data-es="Casi lista" data-en="Almost ready">Casi<br>lista</p>
-    </div>
-    <div class="mad-step">
-      <div class="mad-circle" style="background:linear-gradient(135deg,#c96a08,#3D1C02)">
-        <span class="mad-pct">100%</span><span class="mad-lbl" data-es="Lista" data-en="Ready">Lista</span>
-      </div><p data-es="Lista para comer" data-en="Ready to eat">Lista para<br>comer</p>
-    </div>
+  <div class="ripeness-grid r d3">
+  <div class="ripeness-card">
+    <img src="images/papaya-stage-1.png" alt="Etapa 1">
+    <span class="ripeness-label" data-es="Verde" data-en="Green">Verde</span>
+    <span class="ripeness-days" data-es="Larga distancia" data-en="Long distance">Larga distancia</span>
   </div>
+  <div class="ripeness-card">
+    <img src="images/papaya-stage-2.png" alt="Etapa 2">
+    <span class="ripeness-label" data-es="Iniciando" data-en="Breaking">Iniciando</span>
+    <span class="ripeness-days" data-es="4–5 días" data-en="4–5 days">4–5 días</span>
+  </div>
+  <div class="ripeness-card">
+    <img src="images/papaya-stage-3.png" alt="Etapa 3">
+    <span class="ripeness-label" data-es="Medio" data-en="Half turn">Medio</span>
+    <span class="ripeness-days" data-es="2–3 días" data-en="2–3 days">2–3 días</span>
+  </div>
+  <div class="ripeness-card">
+    <img src="images/papaya-stage-4.png" alt="Etapa 4">
+    <span class="ripeness-label" data-es="Casi listo" data-en="Nearly ripe">Casi listo</span>
+    <span class="ripeness-days" data-es="1–2 días" data-en="1–2 days">1–2 días</span>
+  </div>
+  <div class="ripeness-card">
+    <img src="images/papaya-stage-5.png" alt="Etapa 5">
+    <span class="ripeness-label" data-es="Maduro" data-en="Ripe">Maduro</span>
+    <span class="ripeness-days" data-es="Listo para anaquel" data-en="Ready for shelf">Listo para anaquel</span>
+  </div>
+</div>
   <div class="mad-tip r d1">
     <p data-es="Para madurar en casa: coloca la papaya en una <strong>bolsa de papel</strong> y ciérrala. Déjala en lugar tibio y seco. El tiempo varía según el punto de cosecha." data-en="To ripen at home: place the papaya in a <strong>paper bag</strong> and close it. Leave it in a warm, dry place. Time varies depending on harvest stage.">Para madurar en casa: coloca la papaya en una <strong>bolsa de papel</strong> y ciérrala. Déjala en lugar tibio y seco. El tiempo varía según el punto de cosecha.</p>
   </div>
