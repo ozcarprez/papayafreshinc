@@ -25,9 +25,6 @@ nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97)
 #hero{margin-top:66px;background:#fff;min-height:calc(100vh - 66px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:40px 100px;gap:0;position:relative;overflow:hidden}
 #hero::before{content:none}
 .hero-ghost{position:absolute;font-family:'Fredoka One',cursive;font-size:22vw;color:rgba(2,138,110,.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;opacity:.15;z-index:1}
-.leaf{position:absolute;background:url('images/papaya-leaf.png') center/contain no-repeat;pointer-events:none;opacity:.25}
-.leaf-tl{top:60px;left:20px;transform:rotate(-25deg);width:200px;height:200px}
-.leaf-tr{top:100px;right:20px;transform:rotate(170deg);width:160px;height:160px}
 .hero-text{position:relative;z-index:2;padding:60px 80px;max-width:700px}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-size:.6rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:22px}
 .hero-tag::before{content:'🌿';font-size:.85rem}
@@ -181,9 +178,7 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
 
 <section id="hero">
   <div class="hero-ghost">PAPAYA</div>
-  <div class="leaf leaf-tl"></div>
-  <div class="leaf leaf-tr"></div>
-
+    
   <div class="hero-text r">
         <h1>PAPAYA<span class="block teal">MARADOL</span></h1>
     <p class="hero-sub" data-es="Siempre en temporada. Siempre a tiempo." data-en="Always in season. Always on time.">Siempre en temporada. Siempre a tiempo.</p>
@@ -197,7 +192,6 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
   </section>
 <div style="background:#ffffff;line-height:0"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:60px"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#FDF6EC"/></svg></div>
 <section id="madurez">
-<div class="leaf" style="position:absolute;top:20px;left:-20px;width:150px;height:150px;background:url('images/papaya-leaf.png') center/contain no-repeat;opacity:.10;transform:rotate(-60deg);pointer-events:none"></div>
   <span class="sec-eyebrow r" data-es="guía de maduración" data-en="ripening guide">guía de maduración</span>
   <h2 class="sec-title r d1" data-es="PUNTO DE MADUREZ" data-en="RIPENESS STAGE">PUNTO DE MADUREZ</h2>
   <p class="r d2" style="max-width:620px;margin:0 auto 40px;font-size:1.1rem;font-weight:700;line-height:1.8;color:rgba(61,28,2,.6);text-align:center" data-es="Dependiendo de tu ciudad, seleccionamos el punto de cosecha ideal para que llegue perfecta a tu anaquel." data-en="Depending on your city, we select the ideal harvest point so it arrives perfect to your shelf.">Dependiendo de tu ciudad, seleccionamos el punto de cosecha ideal para que llegue perfecta a tu anaquel.</p>
@@ -235,7 +229,6 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
   <path d="M0,24 Q60,48 120,24 Q180,0 240,24 Q300,48 360,24 Q420,0 480,24 Q540,48 600,24 Q660,0 720,24 Q780,48 840,24 Q900,0 960,24 Q1020,48 1080,24 Q1140,0 1200,24 Q1260,48 1320,24 Q1380,0 1440,24 L1440,48 L0,48Z" fill="#FDF6EC"/>
 </svg>
 <section id="variedades">
-<div class="leaf" style="position:absolute;top:-40px;right:-30px;width:180px;height:180px;background:url('images/papaya-leaf.png') center/contain no-repeat;opacity:.12;transform:rotate(45deg);pointer-events:none"></div>
   <span class="sec-eyebrow r" data-es="nuestra fruta" data-en="our fruit">nuestra fruta</span>
   <h2 class="sec-title r d1" data-es="VARIEDADES" data-en="VARIETIES">VARIEDADES</h2>
   <span class="zig r d2"></span>
@@ -323,7 +316,6 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
   <img src="images/logo-seal.png.png" alt="Papaya Fresh Inc. — Del Campo a la Mesa" style="width:160px;height:160px;object-fit:contain;mix-blend-mode:multiply;opacity:0.85;transition:transform .3s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"> 
 </div>
 <section id="contact">
-<div class="leaf" style="position:absolute;bottom:20px;right:-10px;width:160px;height:160px;background:url('images/papaya-leaf.png') center/contain no-repeat;opacity:.12;transform:rotate(120deg);pointer-events:none"></div>
   <div class="c-left">
     <span class="sec-eyebrow" data-es="hablemos" data-en="let's talk">hablemos</span>
     <h2><span data-es="QUIERO" data-en="I WANT TO">QUIERO</span><br><em data-es="DISTRIBUIR" data-en="DISTRIBUTE">DISTRIBUIR</em></h2>
