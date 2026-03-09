@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Papaya Fresh Inc. — Papaya Maradol, Tecomán Colima</title>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Boogaloo&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--teal:#028A6E;--rosa:#C45E00;--naranja:#E8820C;--amarillo:#fbbf24;--cafe:#3D1C02;--crema:#FDF6EC;--verde-oscuro:#1B4D35}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth}h
 body{font-family:'Nunito',sans-serif;background:#fff;color:var(--cafe);overflow-x:hidden}
 nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97);border-bottom:2px solid #f0ebe4;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:66px}
 .nav-logo{font-family:'Permanent Marker',cursive;font-size:1.15rem;color:var(--teal);text-decoration:none}
@@ -22,8 +22,8 @@ nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97)
 .lang-sep{font-size:.6rem;color:#ccc}
 .nav-cta{background:var(--rosa);color:#fff;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 26px;border-radius:50px;box-shadow:0 4px 16px rgba(196,94,0,.28);transition:transform .2s,box-shadow .2s}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,94,0,.38)}
-#hero{margin-top:66px;min-height:calc(100vh - 66px);position:relative;overflow:hidden;display:flex;align-items:center;background:#fff}
-#hero::before{content:'';position:absolute;inset:0;background:url('images/papaya-hero.png') center/cover no-repeat;opacity:.18;z-index:0}
+#hero{margin-top:66px;background:#fff;min-height:calc(100vh - 66px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:40px 100px;gap:0;position:relative;overflow:hidden}
+#hero::before{content:none}
 .hero-ghost{position:absolute;font-family:'Fredoka One',cursive;font-size:22vw;color:rgba(2,138,110,.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;opacity:.15;z-index:1}
 .leaf{position:absolute;background:url('images/papaya-leaf.png') center/contain no-repeat;pointer-events:none;opacity:.25}
 .leaf-tl{top:60px;left:20px;transform:rotate(-25deg);width:200px;height:200px}
@@ -31,7 +31,7 @@ nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97)
 .hero-text{position:relative;z-index:2;padding:60px 80px;max-width:700px}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-size:.6rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:22px}
 .hero-tag::before{content:'🌿';font-size:.85rem}
-h1{font-family:'Fredoka One',cursive;font-size:clamp(3.5rem,7vw,6.5rem);color:var(--cafe);line-height:.9;margin-bottom:8px}
+h1{font-family:'Boogaloo',cursive;font-size:clamp(3.5rem,7vw,6.5rem);color:var(--cafe);line-height:.9;margin-bottom:8px}
 h1 .teal{color:var(--amarillo)}
 h1 .block{display:block}
 .hero-sub{font-family:'Permanent Marker',cursive;font-size:clamp(1.3rem,3vw,2rem);color:var(--rosa);margin:16px 0 24px;line-height:1.5}
@@ -44,7 +44,7 @@ h1 .block{display:block}
 .btn-main:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(2,138,110,.38)}
 .btn-sec{background:transparent;border:2.5px solid var(--cafe);color:var(--cafe);font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:13px 32px;border-radius:50px;transition:all .2s;display:inline-block}
 .btn-sec:hover{background:var(--cafe);color:#fff}
-.hero-img-side{display:none}
+.hero-img-side{width:100%;max-width:480px;justify-self:center;transform:translateX(-40px)}
 .papaya-wrap{position:relative;display:inline-block}
 .papaya-wrap img{width:clamp(300px,36vw,520px);filter:drop-shadow(-20px 30px 50px rgba(0,0,0,.15));animation:float 6s ease-in-out infinite;display:block}
 @keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-22px) rotate(1.5deg)}}
@@ -185,8 +185,7 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
   <div class="leaf leaf-tr"></div>
 
   <div class="hero-text r">
-    <span class="hero-tag" data-es="Tecomán, Colima · México" data-en="Tecomán, Colima · Mexico">Tecomán, Colima · México</span>
-    <h1>PAPAYA<span class="block teal">MARADOL</span></h1>
+        <h1>PAPAYA<span class="block teal">MARADOL</span></h1>
     <p class="hero-sub" data-es="Siempre en temporada. Siempre a tiempo." data-en="Always in season. Always on time.">Siempre en temporada. Siempre a tiempo.</p>
               </div>
 
