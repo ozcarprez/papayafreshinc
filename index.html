@@ -57,7 +57,7 @@ h1 .block{display:block}
 .doodle{position:absolute;bottom:-10px;left:-60px;font-family:'Permanent Marker',cursive;font-size:.75rem;color:var(--teal);transform:rotate(-8deg);white-space:nowrap}
 .doodle::after{content:'→';font-size:1.2rem;display:block;text-align:right;margin-top:-4px}
 .sqgl{display:block;width:100%;height:48px;line-height:0}
-#variedades{background:var(--crema);padding:80px 60px;text-align:center}
+#variedades{background:var(--crema);padding:80px 60px;text-align:center;position:relative;overflow:hidden}
 .sec-eyebrow{font-family:'Permanent Marker',cursive;font-size:1rem;color:var(--teal);margin-bottom:8px;display:block}
 .sec-title{font-family:'Fredoka One',cursive;font-size:clamp(2.5rem,5vw,4.5rem);color:var(--cafe);line-height:1;margin-bottom:6px}
 .zig{display:block;margin:0 auto 52px;width:120px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='14'%3E%3Cpolyline points='0,7 10,0 20,7 30,0 40,7 50,0 60,7 70,0 80,7 90,0 100,7 110,0 120,7' fill='none' stroke='%23e91e8c' stroke-width='2.5'/%3E%3C/svg%3E") no-repeat center}
@@ -96,7 +96,7 @@ h1 .block{display:block}
 .cstat{background:var(--crema);border-radius:14px;padding:18px;border:2px solid #f0e8df}
 .cstat strong{font-family:'Fredoka One',cursive;font-size:1.9rem;color:var(--teal);display:block;line-height:1}
 .cstat span{font-size:.62rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:rgba(61,28,2,.4)}
-#madurez{background:var(--crema);padding:80px 60px;text-align:center}
+#madurez{background:var(--crema);padding:80px 60px;text-align:center;position:relative;overflow:hidden}
 .mad-row{display:flex;justify-content:center;gap:20px;max-width:700px;margin:0 auto 48px;flex-wrap:wrap}
 .mad-step{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;min-width:100px}
 .mad-circle{width:80px;height:80px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px solid rgba(0,0,0,.06);transition:transform .3s;cursor:default}
@@ -113,7 +113,7 @@ h1 .block{display:block}
 .photo-strip figure{margin:0;overflow:hidden}
 .photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:saturate(.85);transition:transform .5s,filter .5s}
 .photo-strip figure:hover img{transform:scale(1.07);filter:saturate(1.2)}
-#contact{background:var(--crema);padding:100px 80px;display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+#contact{background:var(--crema);padding:100px 80px;display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start;position:relative;overflow:hidden}
 .c-left .sec-eyebrow{text-align:left}
 .c-left h2{font-family:'Fredoka One',cursive;font-size:clamp(2.5rem,5vw,4.2rem);color:var(--cafe);line-height:1;margin-bottom:20px}
 .c-left h2 em{font-style:normal;color:var(--rosa)}
@@ -219,6 +219,7 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
 </svg>
 
 <section id="variedades">
+<div class="leaf" style="position:absolute;top:-40px;right:-30px;width:180px;height:180px;background:url('images/papaya-leaf.png') center/contain no-repeat;opacity:.12;transform:rotate(45deg);pointer-events:none"></div>
   <span class="sec-eyebrow r" data-es="nuestra fruta" data-en="our fruit">nuestra fruta</span>
   <h2 class="sec-title r d1" data-es="VARIEDADES" data-en="VARIETIES">VARIEDADES</h2>
   <span class="zig r d2"></span>
@@ -289,6 +290,7 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
 </svg>
 
 <section id="madurez">
+<div class="leaf" style="position:absolute;top:20px;left:-20px;width:150px;height:150px;background:url('images/papaya-leaf.png') center/contain no-repeat;opacity:.10;transform:rotate(-60deg);pointer-events:none"></div>
   <span class="sec-eyebrow r" data-es="guía de maduración" data-en="ripening guide">guía de maduración</span>
   <h2 class="sec-title r d1" data-es="PUNTO DE MADUREZ" data-en="RIPENESS STAGE">PUNTO DE MADUREZ</h2>
   <p class="r d2" style="max-width:620px;margin:0 auto 40px;font-size:1.1rem;font-weight:700;line-height:1.8;color:rgba(61,28,2,.6);text-align:center" data-es="Dependiendo de tu ciudad, seleccionamos el punto de cosecha ideal para que llegue perfecta a tu anaquel." data-en="Depending on your city, we select the ideal harvest point so it arrives perfect to your shelf.">Dependiendo de tu ciudad, seleccionamos el punto de cosecha ideal para que llegue perfecta a tu anaquel.</p>
@@ -350,6 +352,7 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
   <img src="images/logo-seal.png.png" alt="Papaya Fresh Inc. — Del Campo a la Mesa" style="width:160px;height:160px;object-fit:contain;mix-blend-mode:multiply;opacity:0.85;transition:transform .3s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"> 
 </div>
 <section id="contact">
+<div class="leaf" style="position:absolute;bottom:20px;right:-10px;width:160px;height:160px;background:url('images/papaya-leaf.png') center/contain no-repeat;opacity:.12;transform:rotate(120deg);pointer-events:none"></div>
   <div class="c-left">
     <span class="sec-eyebrow" data-es="hablemos" data-en="let's talk">hablemos</span>
     <h2><span data-es="QUIERO" data-en="I WANT TO">QUIERO</span><br><em data-es="DISTRIBUIR" data-en="DISTRIBUTE">DISTRIBUIR</em></h2>
