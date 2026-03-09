@@ -22,23 +22,13 @@ nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97)
 .lang-sep{font-size:.6rem;color:#ccc}
 .nav-cta{background:var(--rosa);color:#fff;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 26px;border-radius:50px;box-shadow:0 4px 16px rgba(196,94,0,.28);transition:transform .2s,box-shadow .2s}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,94,0,.38)}
-#hero{margin-top:80px;min-height:calc(100vh - 80px);background:linear-gradient(135deg,#02a86e 0%,#028A6E 50%,#016b55 100%);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 80px;position:relative;overflow:hidden;justify-items:center}
-#hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
-#hero::after{content:'';position:absolute;bottom:-150px;left:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.03);pointer-events:none}
-.hero-left{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;font-size:.6rem;font-weight:900;letter-spacing:.25em;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:24px;border:1px solid rgba(255,255,255,.2)}
-.hero-h1{font-family:'Oswald',sans-serif;font-size:clamp(4rem,7vw,7rem);color:#fff;line-height:.9;margin-bottom:20px}
+#hero{margin-top:80px;min-height:calc(100vh - 80px);background:linear-gradient(135deg,#02a86e 0%,#028A6E 50%,#016b55 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;position:relative;overflow:hidden}
+.hero-h1{font-family:'Oswald',sans-serif;font-size:clamp(3.5rem,8vw,7rem);color:#fff;line-height:.9;margin-bottom:30px;font-weight:700}
 .hero-h1 span{color:var(--amarillo);display:block}
-.hero-tagline{font-family:'Permanent Marker',cursive;font-size:clamp(1rem,2vw,1.4rem);color:rgba(255,255,255,.85);margin-bottom:36px;line-height:1.5}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn-hero-main{background:#fff;color:var(--teal);font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:15px 36px;border-radius:50px;box-shadow:0 8px 28px rgba(0,0,0,.15);transition:transform .2s,box-shadow .2s;display:inline-block}
-.btn-hero-main:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.22)}
-.btn-hero-sec{background:transparent;border:2.5px solid rgba(255,255,255,.5);color:#fff;font-size:.75rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:13px 32px;border-radius:50px;transition:all .2s;display:inline-block}
-.btn-hero-sec:hover{background:rgba(255,255,255,.15);border-color:#fff}
-.hero-right{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;height:calc(100vh - 80px)}
-.hero-right img{width:clamp(280px,38vw,520px);filter:drop-shadow(-20px 30px 60px rgba(0,0,0,.25));animation:float 6s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
-@media(max-width:860px){#hero{grid-template-columns:1fr;padding:40px 28px 0;text-align:center}.hero-actions{justify-content:center}.hero-right{height:auto;margin-top:20px}.hero-right img{width:260px}}
+.hero-img{position:relative;z-index:2;margin:0 auto}
+.hero-img img{width:clamp(260px,35vw,480px);filter:drop-shadow(-10px 20px 40px rgba(0,0,0,.25));animation:float 6s ease-in-out infinite;display:block;margin:0 auto}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+.hero-tagline{font-family:'Permanent Marker',cursive;font-size:clamp(1rem,2vw,1.4rem);color:rgba(255,255,255,.9);margin-top:28px}
 h1{font-family:'Boogaloo',cursive;font-size:clamp(4rem,10vw,8rem);color:#fff;line-height:.85;margin-bottom:0;position:relative;z-index:2}
 h1 .teal{color:var(--amarillo)}
 h1 .block{display:block}
@@ -174,13 +164,11 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
 </nav>
 
 <section id="hero">
-  <div class="hero-left r">
-    <h1 class="hero-h1">PAPAYA<span>MARADOL</span></h1>
-    <p class="hero-tagline" data-es="Del rancho a tu negocio,<br>siempre fresca." data-en="From the ranch to your business,<br>always fresh.">Del rancho a tu negocio,<br>siempre fresca.</p>
-  </div>
-  <div class="hero-right r d1">
+  <h1 class="hero-h1 r">PAPAYA<span>MARADOL</span></h1>
+  <div class="hero-img r d1">
     <img src="images/papaya-maradol.png" alt="Papaya Maradol Fresca">
   </div>
+  <p class="hero-tagline r d2" data-es="Del rancho a tu negocio, siempre fresca." data-en="From the ranch to your business, always fresh.">Del rancho a tu negocio, siempre fresca.</p>
 </section>
 <div style="background:var(--teal);line-height:0;margin-top:-2px"><svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:120px"><path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="#FDF6EC"/></svg></div>
 <section id="madurez">
