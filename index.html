@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+á<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 :root{--teal:#028A6E;--rosa:#C45E00;--naranja:#E8820C;--amarillo:#fbbf24;--cafe:#3D1C02;--crema:#FDF6EC;--verde-oscuro:#1B4D35}
 html{scroll-behavior:smooth}h
 body{font-family:'Nunito',sans-serif;background:#fff;color:var(--cafe);overflow-x:hidden}
-nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97);border-bottom:2px solid #f0ebe4;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:66px}
+nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97);border-bottom:2px solid #f0ebe4;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:80px}
 .nav-logo{font-family:'Permanent Marker',cursive;font-size:1.15rem;color:var(--teal);text-decoration:none}
 .nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:var(--cafe);text-decoration:none;transition:color .2s;font-family:'Nunito',sans-serif}
@@ -22,7 +22,7 @@ nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97)
 .lang-sep{font-size:.6rem;color:#ccc}
 .nav-cta{background:var(--rosa);color:#fff;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:10px 26px;border-radius:50px;box-shadow:0 4px 16px rgba(196,94,0,.28);transition:transform .2s,box-shadow .2s}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,94,0,.38)}
-#hero{margin-top:66px;background:#fff;min-height:calc(100vh - 66px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:40px 100px;gap:0;position:relative;overflow:hidden}
+#hero{margin-top:110px;background:#fff;min-height:calc(100vh - 66px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:40px 100px;gap:0;position:relative;overflow:hidden}
 #hero::before{content:none}
 .hero-ghost{position:absolute;font-family:'Fredoka One',cursive;font-size:22vw;color:rgba(2,138,110,.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;opacity:.15;z-index:1}
 .hero-text{position:relative;z-index:2;padding:60px 80px;max-width:700px}
@@ -165,9 +165,11 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
       <span class="lang-sep">|</span>
       <button class="lang-btn" id="btn-en" onclick="setLang('en')">ENG</button>
     </div>
-    <a class="nav-cta" href="#contact" data-es="Cotizar" data-en="Get a Quote">Cotizar</a>
-  </div>
+      </div>
 </nav>
+<div style="position:fixed;top:80px;width:100%;z-index:199;background:var(--teal);padding:7px 0;text-align:center;line-height:1">
+  <p style="margin:0;color:#fff;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase" data-es="🌿 Producción 365 días · Tecomán, Colima · Exportación EUA 🌿" data-en="🌿 Year-round Production · Tecomán, Colima · USA Export 🌿">🌿 Producción 365 días · Tecomán, Colima · Exportación EUA 🌿</p>
+</div>
 
 <section id="hero">
   <div class="hero-ghost">PAPAYA</div>
