@@ -25,7 +25,7 @@ nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(255,255,255,.97)
 #hero{margin-top:66px;background:#fff;min-height:calc(100vh - 66px);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:40px 80px 60px;position:relative;overflow:hidden}
 #hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(2,138,110,.08) 0%,transparent 65%);pointer-events:none}
 .hero-ghost{position:absolute;font-family:'Fredoka One',cursive;font-size:22vw;color:rgba(2,138,110,.05);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-.02em;user-select:none}
-.leaf{position:absolute;pointer-events:none;opacity:.15}
+.leaf{position:absolute;background:url('images/papaya-leaf.png') center/contain no-repeat;pointer-events:none;opacity:.18}
 .leaf-tl{top:90px;left:30px;transform:rotate(-25deg);width:120px}
 .leaf-tr{top:120px;right:30px;transform:rotate(170deg);width:100px}
 .hero-text{position:relative;z-index:2}
@@ -180,18 +180,8 @@ footer{background:var(--verde-oscuro);padding:40px 60px;display:flex;align-items
 
 <section id="hero">
   <div class="hero-ghost">PAPAYA</div>
-  <svg class="leaf leaf-tl" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M40 110 C40 110 5 80 5 45 C5 20 20 5 40 5 C60 5 75 20 75 45 C75 80 40 110 40 110Z" fill="#4caf50"/>
-    <line x1="40" y1="10" x2="40" y2="105" stroke="#2e7d32" stroke-width="2"/>
-    <line x1="40" y1="40" x2="20" y2="55" stroke="#2e7d32" stroke-width="1.5"/>
-    <line x1="40" y1="55" x2="60" y2="68" stroke="#2e7d32" stroke-width="1.5"/>
-  </svg>
-  <svg class="leaf leaf-tr" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M40 110 C40 110 5 80 5 45 C5 20 20 5 40 5 C60 5 75 20 75 45 C75 80 40 110 40 110Z" fill="#028A6E"/>
-    <line x1="40" y1="10" x2="40" y2="105" stroke="#01624F" stroke-width="2"/>
-    <line x1="40" y1="40" x2="20" y2="55" stroke="#01624F" stroke-width="1.5"/>
-    <line x1="40" y1="55" x2="60" y2="68" stroke="#01624F" stroke-width="1.5"/>
-  </svg>
+  <div class="leaf leaf-tl"></div>
+  <div class="leaf leaf-tr"></div>
 
   <div class="hero-text r">
     <span class="hero-tag" data-es="Tecomán, Colima · México" data-en="Tecomán, Colima · Mexico">Tecomán, Colima · México</span>
